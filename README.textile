@@ -1,0 +1,4 @@
+h1. Cinemática vetorial na base polar
+
+Nesta AI o usuário recebe a expressão temporal do raio e do ângulo azimutal (coordenadas polares), e deve com isso organizar os elementos visuais da tela de modo a representar corretamente os versores polares, o vetor de posição, o vetor de velocidade e o vetor de aceleração. No segundo exercício, o usuário deve informar o valor da componente radial da aceleração (aceleração centrípeta).
+
