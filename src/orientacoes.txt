@@ -1,0 +1,25 @@
+* Já coloquei as 2 questões no próprio HTML
+* Use sempre o index.html (o AI_xxxx.html será o alvo de exportação do Geogebra)
+* Sortear o tempo t entre 0, 0.78 (pi/4), 1.57 (pi/2) ou 2.36 (3*pi/4). O ideal seria escrevermos o exercício assim: t = n pi/4, onde n = 0, 1, 2 ou 3
+* Condições para resposta certa ao exercício 1:
+  1) R2.x - R1.x = 2 * cos(2t) (HTML) - <<9 pontos>>
+  2) R2.y - R1.y = 2 * sen(2t) (HTML) - <<9 pontos>>
+  3) V2.x - V1.x = -4 * sen(2t) (HTML) - <<9 pontos>>
+  4) V2.y - V1.y = +4 * cos(2t) (HTML) - <<9 pontos>>
+  5) A2.x - A1.x = -8 * cos(2t) (HTML) - <<9 pontos>>
+  6) A2.y - A1.y = -8 * sen(2t) (HTML) - <<9 pontos>>
+  7) orientação(e_rho) = orientação(r) = orientação(R2 - R1) - <<9 pontos>>
+  8) orientação(e_phi) = orientação(e_rho) + 90º (sentido anti-horário) - <<9 pontos>>
+  9) orientação(i) = 0º - <<9 pontos>>
+  10) orientação(j) = 90º (anti-horário) - <<9 pontos>>  
+* As condições (7) e (8) acima podem ser SUBSTITUÍDAS por:
+  1) e_rho . r = +|r|  (produto escalar)
+  2) e_rho x e_phi . (0,0,1) = +1 (produto misto)
+      
+* Condições para resposta certa no exercício 2:
+  1) a_rho = 8 <<10 pontos>> (positivo sempre, e apenas isso: oito)
+  
+  
+obs.: r = (t, 2t)
+      v = (1, 2t)
+      a = (-4t, 2)
