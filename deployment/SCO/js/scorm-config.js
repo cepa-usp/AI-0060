@@ -13,19 +13,27 @@ var pingCount = 0; // Conta a quantidade de pings enviados para o LMS
 $(document).ready(function(){
  
   //Deixa a aba "Orientações" ativa no carregamento da atividade
-  $('#exercicios').tabs({ selected: 2 }); 
+  $('#exercicios').tabs({ selected: 0 }); 
  
   $('#exercicios').tabs({
       select: function(event, ui) {
-        screenExercise = ui.index + 1;
+        screenExercise = ui.index;
       }
   });
                                        
   $('#button1').button().click(evaluateExercise);
   $('#button2').button().click(evaluateExercise);
+  $('#button3').button().click(reloadPage); 
   
   initAI();
 });
+
+//Refresh da Página.
+function reloadPage()
+{
+	document.getElementById("limpa").reset();
+	window.location.reload() 
+}
 
 // Encerra a AI.
 $(window).unload(function (){
@@ -107,10 +115,8 @@ function initAI () {
   // (Re)abilita os exercícios já feitos e desabilita aqueles ainda por fazer.
   if (completed) $('#exercicios').tabs("option", "disabled", []);
   else {
-    for (i = 0; i < N_EXERCISES; i++) {
-      if (i < scormExercise) $('#exercicios').tabs("enable", i);
-      else $('#exercicios').tabs("disable", i);
-    }
+	$('#exercicios').tabs((scormExercise >= 1 ? "enable": "disable"), 1);
+	$('#exercicios').tabs((scormExercise >= 2 ? "enable": "disable"), 2);
   }
 }
 
@@ -178,7 +184,7 @@ function evaluateExercise (event) {
 function nextExercise () {
   if (scormExercise < N_EXERCISES) ++scormExercise;
   
-  $('#exercicios').tabs("enable", (scormExercise - 1));
+  $('#exercicios').tabs("enable", scormExercise);
 }
 
 /*
