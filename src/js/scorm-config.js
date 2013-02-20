@@ -14,8 +14,21 @@ var debug = true;
 
 // Inicia a AI.
 $(document).ready(function(){
- 
-  //Deixa a aba "Orientações" ativa no carregamento da atividade
+	tryinitialize();
+  
+});
+
+function tryinitialize(){
+	try{
+		document.ggbApplet.debug("");
+		initialize();
+	}catch(err){
+		setTimeout(tryinitialize, 1000);
+	}
+}
+
+function initialize(){
+	//Deixa a aba "Orientações" ativa no carregamento da atividade
   $('#exercicios').tabs({ selected: 0 }); 
  
   $('#exercicios').tabs({
@@ -28,8 +41,10 @@ $(document).ready(function(){
   $('#button2').button().click(evaluateExercise);
   $('#button3').button().click(reloadPage); 
   
+  $('#exercicios').show();
+  
   checkCallbacks();
-});
+}
 
 function checkCallbacks () {
 	var t2 = new Date().getTime();
