@@ -55,7 +55,6 @@ function checkCallbacks () {
 		var ycoord =  0 + Math.floor( 6 * Math.random());
 		document.ggbApplet.setCoords('C', xcoord, ycoord);
 		ok = true;
-		message("ok");
 	}
 	catch(error) {
 		++init_tries;
@@ -64,7 +63,6 @@ function checkCallbacks () {
 			alert("Carregamento falhou.");
 		}
 		else {
-			message("falhou");
 			setTimeout("checkCallbacks()", 1000);
 		}
 	}
